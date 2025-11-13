@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web accessibility data, WCAG standards, and color contrast requirements">
+  <title>Data - Advanced Web Project</title>
+  
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <style>
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-6) 0;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--space-3);
+    }
+
+    th, td {
+      padding: var(--space-3);
+      text-align: left;
+      border: 1px solid var(--color-border);
+    }
+
+    th {
+      background-color: var(--color-focus-background);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    /* Definition List */
+    dl {
+      margin: var(--space-4) 0;
+    }
+
+    dt {
+      font-weight: var(--font-weight-semibold);
+      margin-top: var(--space-4);
+    }
+
+    dd {
+      margin-left: var(--space-6);
+      margin-top: var(--space-2);
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body class="page-layout">
+  
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header Landmark -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="site-logo">Advanced Web</a>
+      
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="data.html" aria-current="page">Data</a></li>
+          <li><a href="form.html">Form</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main" class="site-main" tabindex="-1">
+    <div class="main-container">
+      
+      <h1>Web Accessibility Data</h1>
+      
+      <p>
+        This page demonstrates accessible data presentation using semantic HTML, 
+        proper tables, and lists. All content is keyboard navigable.
+      </p>
+
+      <section aria-labelledby="wcag-heading">
+        <h2 id="wcag-heading">WCAG 2.1 Conformance Levels</h2>
+        
+        <p>
+          The Web Content Accessibility Guidelines (WCAG) 2.1 defines three levels 
+          of conformance. This project targets Level AA compliance.
+        </p>
+
+        <table>
+          <caption>WCAG 2.1 Conformance Requirements</caption>
+          <thead>
+            <tr>
+              <th scope="col">Level</th>
+              <th scope="col">Description</th>
+              <th scope="col">Requirements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">A</th>
+              <td>Basic accessibility</td>
+              <td>Text alternatives, keyboard access</td>
+            </tr>
+            <tr>
+              <th scope="row">AA</th>
+              <td>Ideal for most websites</td>
+              <td>4.5:1 contrast, captions, headings</td>
+            </tr>
+            <tr>
+              <th scope="row">AAA</th>
+              <td>Highest accessibility</td>
+              <td>7:1 contrast, sign language</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="contrast-heading">
+        <h2 id="contrast-heading">Color Contrast Requirements</h2>
+        
+        <h3>WCAG AA Standards</h3>
+        <dl>
+          <dt>Normal Text (under 18pt)</dt>
+          <dd>Minimum 4.5:1 contrast ratio</dd>
+          
+          <dt>Large Text (18pt and larger)</dt>
+          <dd>Minimum 3:1 contrast ratio</dd>
+          
+          <dt>UI Components</dt>
+          <dd>Minimum 3:1 contrast ratio</dd>
+        </dl>
+
+        <h3>Project Color Tokens</h3>
+        <ul>
+          <li><strong>Primary Text:</strong> #212121 on white (16:1) ✓</li>
+          <li><strong>Secondary Text:</strong> #616161 on white (7.2:1) ✓</li>
+          <li><strong>Links:</strong> #1976d2 on white (4.7:1) ✓</li>
+          <li><strong>Success:</strong> #2e7d32 on white (4.6:1) ✓</li>
+          <li><strong>Error:</strong> #c62828 on white (5.5:1) ✓</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="shortcuts-heading">
+        <h2 id="shortcuts-heading">Keyboard Shortcuts</h2>
+        
+        <h3>Navigation Keys</h3>
+        <ul>
+          <li><strong>Tab</strong> - Move to next element</li>
+          <li><strong>Shift + Tab</strong> - Move to previous element</li>
+          <li><strong>Enter</strong> - Activate links and buttons</li>
+          <li><strong>Space</strong> - Activate buttons, toggle checkboxes</li>
+          <li><strong>Arrow Keys</strong> - Navigate within components</li>
+          <li><strong>Esc</strong> - Close dialogs and menus</li>
+        </ul>
+
+        <h3>Screen Reader Keys (NVDA/JAWS)</h3>
+        <ul>
+          <li><strong>H</strong> - Navigate by headings</li>
+          <li><strong>L</strong> - Navigate by lists</li>
+          <li><strong>T</strong> - Navigate by tables</li>
+          <li><strong>F</strong> - Navigate by form fields</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="statistics-heading">
+        <h2 id="statistics-heading">Accessibility Statistics</h2>
+        
+        <ul>
+          <li>Over 1 billion people live with some form of disability</li>
+          <li>15-20% of population has disability affecting web usage</li>
+          <li>97.4% of home pages have WCAG failures (WebAIM 2023)</li>
+          <li>71% of disabled users leave difficult websites</li>
+          <li>Accessible sites have 50% higher engagement</li>
+        </ul>
+
+        <blockquote style="margin: var(--space-6) 0; padding: var(--space-4); border-left: 4px solid var(--color-primary-600); background-color: var(--color-surface);">
+          <p style="font-style: italic; margin-bottom: var(--space-2);">
+            "The power of the Web is in its universality. Access by everyone 
+            regardless of disability is an essential aspect."
+          </p>
+          <footer style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+            — Tim Berners-Lee, W3C Director
+          </footer>
+        </blockquote>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Landmark -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p style="margin-top: var(--space-4); text-align: center; font-size: var(--font-size-sm);">
+        &copy; 2025 Advanced Web Project. Built with accessibility in mind.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/a11y.js"></script>
+
+</body>
+</html>

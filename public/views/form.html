@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible contact form with proper labels and validation">
+  <title>Contact Form - Advanced Web Project</title>
+  
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+</head>
+<body class="page-layout">
+  
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header Landmark -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="site-logo">Advanced Web</a>
+      
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="form.html" aria-current="page">Form</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main" class="site-main" tabindex="-1">
+    <div class="main-container" style="max-width: 48rem;">
+      
+      <h1>Contact Us</h1>
+      
+      <p>
+        This form demonstrates accessible design with proper labels, 
+        helper text, and keyboard navigation.
+      </p>
+
+      <!-- Success Message -->
+      <div id="success-message" role="status" aria-live="polite" style="display: none; padding: var(--space-4); background-color: #e8f5e9; border-left: 4px solid var(--color-success); border-radius: var(--radius-base); margin-bottom: var(--space-6);">
+        <p style="margin: 0; color: var(--color-success); font-weight: var(--font-weight-semibold);">
+          Success! Your message has been sent.
+        </p>
+      </div>
+
+      <form id="contact-form" novalidate>
+        
+        <!-- Personal Information -->
+        <fieldset style="border: 1px solid var(--color-border); border-radius: var(--radius-base); padding: var(--space-4); margin-bottom: var(--space-6);">
+          <legend style="font-weight: var(--font-weight-semibold); padding: 0 var(--space-2);">Personal Information</legend>
+          
+          <div class="form-group">
+            <label for="full-name">
+              Full Name <abbr title="required">*</abbr>
+            </label>
+            <input 
+              type="text" 
+              id="full-name" 
+              name="fullName"
+              required
+              aria-required="true"
+              aria-describedby="full-name-helper"
+            >
+            <span id="full-name-helper" class="form-helper">
+              Please enter your first and last name
+            </span>
+            <span id="full-name-error" class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              Email Address <abbr title="required">*</abbr>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              required
+              aria-required="true"
+              aria-describedby="email-helper"
+              autocomplete="email"
+            >
+            <span id="email-helper" class="form-helper">
+              We'll never share your email
+            </span>
+            <span id="email-error" class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">
+              Phone Number <span style="font-weight: normal; color: var(--color-text-secondary);">(Optional)</span>
+            </label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              autocomplete="tel"
+            >
+          </div>
+        </fieldset>
+
+        <!-- Message Details -->
+        <fieldset style="border: 1px solid var(--color-border); border-radius: var(--radius-base); padding: var(--space-4); margin-bottom: var(--space-6);">
+          <legend style="font-weight: var(--font-weight-semibold); padding: 0 var(--space-2);">Message Details</legend>
+          
+          <div class="form-group">
+            <label for="subject">
+              Subject <abbr title="required">*</abbr>
+            </label>
+            <select 
+              id="subject" 
+              name="subject"
+              required
+              aria-required="true"
+            >
+              <option value="">-- Please select --</option>
+              <option value="general">General Inquiry</option>
+              <option value="accessibility">Accessibility Feedback</option>
+              <option value="technical">Technical Support</option>
+              <option value="other">Other</option>
+            </select>
+            <span id="subject-error" class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              Message <abbr title="required">*</abbr>
+            </label>
+            <textarea 
+              id="message" 
+              name="message"
+              rows="6"
+              required
+              aria-required="true"
+              aria-describedby="message-helper"
+            ></textarea>
+            <span id="message-helper" class="form-helper">
+              Minimum 10 characters
+            </span>
+            <span id="message-error" class="form-error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset style="border: 1px solid var(--color-border); border-radius: var(--radius-base); padding: var(--space-4); margin-bottom: var(--space-6);">
+          <legend style="font-weight: var(--font-weight-semibold); padding: 0 var(--space-2);">Preferences</legend>
+          
+          <div class="form-group">
+            <fieldset style="border: none; padding: 0;">
+              <legend style="padding: 0; font-weight: var(--font-weight-semibold); margin-bottom: var(--space-3);">
+                Contact Method <abbr title="required">*</abbr>
+              </legend>
+              
+              <div style="margin-bottom: var(--space-2);">
+                <input 
+                  type="radio" 
+                  id="contact-email" 
+                  name="contactMethod" 
+                  value="email"
+                  required
+                >
+                <label for="contact-email" style="display: inline; margin-left: var(--space-2); font-weight: normal;">
+                  Email
+                </label>
+              </div>
+              
+              <div style="margin-bottom: var(--space-2);">
+                <input 
+                  type="radio" 
+                  id="contact-phone" 
+                  name="contactMethod" 
+                  value="phone"
+                >
+                <label for="contact-phone" style="display: inline; margin-left: var(--space-2); font-weight: normal;">
+                  Phone
+                </label>
+              </div>
+              
+              <span id="contact-method-error" class="form-error" role="alert"></span>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="checkbox" 
+              id="terms" 
+              name="terms"
+              required
+              aria-required="true"
+            >
+            <label for="terms" style="display: inline; margin-left: var(--space-2); font-weight: normal;">
+              I agree to the <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a> <abbr title="required">*</abbr>
+            </label>
+            <span id="terms-error" class="form-error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Submit Buttons -->
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <button type="submit" class="button button--primary">
+            Send Message
+          </button>
+          <button type="reset" class="button button--secondary">
+            Clear Form
+          </button>
+        </div>
+
+        <p style="margin-top: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+          <abbr title="required">*</abbr> Required fields
+        </p>
+
+      </form>
+
+      <!-- Navigation Help -->
+      <section aria-labelledby="help-heading" style="margin-top: var(--space-12); padding: var(--space-6); background-color: var(--color-surface); border-radius: var(--radius-lg);">
+        <h2 id="help-heading">Form Navigation Tips</h2>
+        
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+          <li><strong>Tab</strong> - Move to next field</li>
+          <li><strong>Shift + Tab</strong> - Move to previous field</li>
+          <li><strong>Space</strong> - Toggle checkboxes/radio buttons</li>
+          <li><strong>Enter</strong> - Submit form</li>
+        </ul>
+
+        <h3>Accessibility Features</h3>
+        <ul>
+          <li>All fields have associated labels</li>
+          <li>Required fields marked with <abbr title="required">*</abbr></li>
+          <li>Helper text provides guidance</li>
+          <li>Error messages announced to screen readers</li>
+          <li>Related fields grouped with fieldsets</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Landmark -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p style="margin-top: var(--space-4); text-align: center; font-size: var(--font-size-sm);">
+        &copy; 2025 Advanced Web Project. Built with accessibility in mind.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/a11y.js"></script>
+
+  <script>
+    // Form Validation
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Clear previous errors
+      document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+      document.querySelectorAll('.form-group--error').forEach(el => el.classList.remove('form-group--error'));
+
+      let isValid = true;
+
+      // Validate name
+      const fullName = form.elements['fullName'];
+      if (!fullName.value.trim()) {
+        showError(fullName, 'full-name-error', 'Please enter your name');
+        isValid = false;
+      }
+
+      // Validate email
+      const email = form.elements['email'];
+      if (!email.value.trim()) {
+        showError(email, 'email-error', 'Please enter your email');
+        isValid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        showError(email, 'email-error', 'Please enter a valid email');
+        isValid = false;
+      }
+
+      // Validate subject
+      const subject = form.elements['subject'];
+      if (!subject.value) {
+        showError(subject, 'subject-error', 'Please select a subject');
+        isValid = false;
+      }
+
+      // Validate message
+      const message = form.elements['message'];
+      if (!message.value.trim()) {
+        showError(message, 'message-error', 'Please enter a message');
+        isValid = false;
+      } else if (message.value.trim().length < 10) {
+        showError(message, 'message-error', 'Message must be at least 10 characters');
+        isValid = false;
+      }
+
+      // Validate contact method
+      const contactMethod = form.elements['contactMethod'];
+      if (!contactMethod.value) {
+        document.getElementById('contact-method-error').textContent = 'Please select a contact method';
+        isValid = false;
+      }
+
+      // Validate terms
+      const terms = form.elements['terms'];
+      if (!terms.checked) {
+        showError(terms, 'terms-error', 'You must agree to terms');
+        isValid = false;
+      }
+
+      if (isValid) {
+        successMessage.style.display = 'block';
+        form.reset();
+        setTimeout(() => successMessage.style.display = 'none', 5000);
+      }
+    });
+
+    function showError(field, errorId, message) {
+      document.getElementById(errorId).textContent = message;
+      field.closest('.form-group')?.classList.add('form-group--error');
+      field.setAttribute('aria-invalid', 'true');
+    }
+
+    // Clear errors on input
+    form.addEventListener('input', function(e) {
+      if (e.target.hasAttribute('aria-invalid')) {
+        e.target.removeAttribute('aria-invalid');
+        const errorId = e.target.id + '-error';
+        const errorEl = document.getElementById(errorId);
+        if (errorEl) errorEl.textContent = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

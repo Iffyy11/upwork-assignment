@@ -1,0 +1,24 @@
+{
+  "name": "advanced-web-upload1",
+  "version": "1.0.0",
+  "description": "Advanced Web Development - Upload 1: Accessible Static Site",
+  "scripts": {
+    "dev": "npx http-server public -p 8080 -o",
+    "lint:html": "npx html-validate \"public/**/*.html\"",
+    "lint:css": "npx stylelint \"public/css/**/*.css\"",
+    "lint": "npm run lint:html && npm run lint:css"
+  },
+  "keywords": [
+    "accessibility",
+    "semantic-html",
+    "wcag"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "html-validate": "^8.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "http-server": "^14.1.1"
+  }
+}

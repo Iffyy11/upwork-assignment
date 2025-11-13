@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced Web Development - Accessible, semantic, and responsive web design">
+  <title>Home - Advanced Web Project</title>
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="page-layout">
+  
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header Landmark -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-logo">Advanced Web</a>
+      
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="views/data.html">Data</a></li>
+          <li><a href="views/form.html">Form</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main" class="site-main" tabindex="-1">
+    <div class="main-container">
+      
+      <h1>Welcome to Advanced Web Development</h1>
+      
+      <p>
+        This project demonstrates best practices in web accessibility, semantic HTML, 
+        and responsive design. Built with a mobile-first approach for excellent 
+        experience across all devices.
+      </p>
+
+      <section aria-labelledby="features-heading">
+        <h2 id="features-heading">Key Features</h2>
+        
+        <div class="card-grid">
+          <article class="card">
+            <h3>Semantic HTML</h3>
+            <p>
+              Every element uses the most appropriate HTML5 tag, providing clear 
+              structure for users and assistive technologies.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>WCAG 2.1 AA Compliant</h3>
+            <p>
+              All color combinations meet 4.5:1 contrast ratios for normal text 
+              and 3:1 for large text and UI components.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Keyboard Accessible</h3>
+            <p>
+              Navigate the entire site using only keyboard. Press Tab to move 
+              forward and Enter to activate links.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Responsive Design</h3>
+            <p>
+              Mobile-first CSS Grid and Flexbox layouts adapt seamlessly from 
+              phones to large desktop displays.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Performance Optimized</h3>
+            <p>
+              Minimal CSS and JavaScript with no external dependencies for 
+              fast load times and excellent scores.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Progressive Enhancement</h3>
+            <p>
+              Core functionality works without JavaScript, with enhanced 
+              interactions layered on top.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="navigation-heading">
+        <h2 id="navigation-heading">Keyboard Navigation</h2>
+        
+        <p>Try these keyboard shortcuts:</p>
+        <ul>
+          <li><strong>Tab</strong> - Move to next interactive element</li>
+          <li><strong>Shift + Tab</strong> - Move to previous element</li>
+          <li><strong>Enter</strong> - Activate links and buttons</li>
+          <li><strong>Space</strong> - Activate buttons</li>
+        </ul>
+
+        <p>
+          Press <strong>Tab</strong> immediately after loading to reveal the 
+          skip link, which jumps directly to main content.
+        </p>
+      </section>
+
+      <section aria-labelledby="explore-heading">
+        <h2 id="explore-heading">Explore the Project</h2>
+        <p>
+          <a href="views/data.html" class="button button--primary">View Data Page</a>
+          <a href="views/form.html" class="button button--secondary">Try the Form</a>
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Landmark -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p style="margin-top: var(--space-4); text-align: center; font-size: var(--font-size-sm);">
+        &copy; 2025 Advanced Web Project. Built with accessibility in mind.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/a11y.js"></script>
+
+</body>
+</html>
